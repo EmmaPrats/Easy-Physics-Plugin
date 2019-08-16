@@ -6,25 +6,25 @@ If you want to use the library without the editor, you can find it ![here](...li
 
 ### Springs
 
-![alt text](...springs screenshot...)
+![alt text](https://github.com/Onpu93/Easy-Physics-Plugin/blob/master/sample-springs.png)
 
 Each letter will be propelled away from the mouse when it gets close to them, and they will spring back into place when the mouse leaves. You can choose the text, font, color, spring strength, and more!
 
 ### Floating
 
-![alt text](...floating screenshot...)
+![alt text](https://github.com/Onpu93/Easy-Physics-Plugin/blob/master/sample-floating.png)
 
 Each letter is a solid object that floats in water. You can choose the letters, font, color, mass, liquid density, and more!
 
 ### Flocking
 
-![alt text](...flocking screenshot...)
+![alt text](https://github.com/Onpu93/Easy-Physics-Plugin/blob/master/sample-flocking.png)
 
 It's a simple implementation of Reynolds' 1987 paper ["Flocks, Herds, and Shcools: A Distributed Behavioral Model"](https://www.red3d.com/cwr/boids/). It creates a flock of objects that move around. Those objects can be images, and you can tweak their behaviour.
 
 ### Steering
 
-![alt text](...steering screenshot...)
+![alt text](https://github.com/Onpu93/Easy-Physics-Plugin/blob/master/sample-steering.png)
 
 Another implementation of a Reynold's paper: ["Steering Behaviours for Autonomous Characters"](https://www.red3d.com/cwr/steer/). There are 2 agents and a prize. Agent A tries to reach the prize while avoiding Agent B, whose goal is to reach Agent A. You can tweak their behaviour and decide which elements you want in the scene.
 
