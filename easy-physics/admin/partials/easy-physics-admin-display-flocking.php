@@ -32,7 +32,7 @@ $eptfg_settings_flocking = array(
     'oriented' => get_option( 'eptfg-flocking-oriented', true),
     'visualrepresentation' => get_option( 'eptfg-flocking-visualrepresentation', 'shape'),
     'shape' => get_option ( 'eptfg-flocking-shape', 'triangle' ),
-    'image' => get_option ( 'eptfg-flocking-image', null ), //TODO
+    'image' => get_option ( 'eptfg-flocking-image', null ),
     'color' => get_option( 'eptfg-flocking-color', '#000000' )
 );
 ?>
@@ -100,16 +100,18 @@ $eptfg_settings_flocking = array(
                 <input type="radio" id="input-shape-circle" name="eptfg-flocking-shape" value="circle" <?php if($eptfg_settings_flocking['shape'] == 'circle') echo 'checked'; ?>/> <label for="input-shape-circle">circle</label><br/>
                 <input type="radio" id="input-shape-triangle" name="eptfg-flocking-shape" value="triangle" <?php if($eptfg_settings_flocking['shape'] == 'triangle') echo 'checked'; ?>/> <label for="input-shape-triangle">triangle</label><br/>
                 <input type="radio" id="input-shape-square" name="eptfg-flocking-shape" value="square" <?php if($eptfg_settings_flocking['shape'] == 'square') echo 'checked'; ?>/> <label for="input-shape-square">square</label><br/>
-                <input type="color" value="#000000" id="input-color" name="eptfg-flocking-color"/>
+                <input type="color" value="<?php echo $eptfg_settings_flocking['color']; ?>" id="input-color" name="eptfg-flocking-color"/>
             </span>
         </div>
         <div class="userinput-item">
             <span class="left">
                 visual representation:<br/>
-                <input type="radio" id="input-visualrepresentation-image" name="eptfg-flocking-visualrepresentation" value"image" <?php if($eptfg_settings_flocking['visualrepresentation'] == 'image') echo 'checked'; ?>/> <label for="input-visualrepresentation-image">image</label>
+                <input type="radio" id="input-visualrepresentation-image" name="eptfg-flocking-visualrepresentation" value="image" <?php if($eptfg_settings_flocking['visualrepresentation'] == 'image') echo 'checked'; ?>/> <label for="input-visualrepresentation-image">image</label>
             </span>
             <span class="right">
-                <input type="file" accept="image/*" id="input-image" name="eptfg-flocking-image"/><!--TODO value-->
+                <input type="file" accept="image/*" id="input-image"/>
+                <input type="hidden" id="image-src" name="eptfg-flocking-image" value="<?php echo $eptfg_settings_flocking['image']; ?>"/>
+                <img id="image-preview" src="<?php echo $eptfg_settings_flocking['image']; ?>" width="50" height="50"/>
             </span>
         </div>
     </div>

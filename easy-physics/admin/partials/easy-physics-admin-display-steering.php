@@ -145,7 +145,6 @@ $eptfg_settings_steering = array(
         </div>
     </div>
     <div class="userinput-block">
-        <!--TODO this might cause problem-->
         <p>EDIT THE HUNTER'S AESTHETICS</p>
         <div class="userinput-item">
             <span class="left"><label for="input-oriented-hunter">oriented towards movement</label></span>
@@ -160,21 +159,22 @@ $eptfg_settings_steering = array(
                 <input type="radio" id="input-shape-circle-hunter" name="eptfg-steering-shape-hunter" value="circle" <?php if($eptfg_settings_steering['shape-hunter'] == 'circle') echo 'checked'; ?>/> <label for="input-shape-circle-hunter">circle</label><br/>
                 <input type="radio" id="input-shape-triangle-hunter" name="eptfg-steering-shape-hunter" value="triangle" <?php if($eptfg_settings_steering['shape-hunter'] == 'triangle') echo 'checked'; ?>/> <label for="input-shape-triangle-hunter">triangle</label><br/>
                 <input type="radio" id="input-shape-square-hunter" name="eptfg-steering-shape-hunter" value="square" <?php if($eptfg_settings_steering['shape-hunter'] == 'square') echo 'checked'; ?>/> <label for="input-shape-square-hunter">square</label><br/>
-                <input type="color" value="#000000" id="input-color-hunter" name="eptfg-steering-color-hunter"/>
+                <input type="color" value="<?php echo $eptfg_settings_steering['color-hunter']; ?>" id="input-color-hunter" name="eptfg-steering-color-hunter"/>
             </span>
         </div>
         <div class="userinput-item">
             <span class="left">
                 visual representation:<br/>
-                <input type="radio" id="input-visualrepresentation-image-hunter" name="eptfg-steering-visualrepresentation-hunter" value"image" <?php if($eptfg_settings_steering['visualrepresentation-hunter'] == 'image') echo 'checked'; ?>/> <label for="input-visualrepresentation-image-hunter">image</label>
+                <input type="radio" id="input-visualrepresentation-image-hunter" name="eptfg-steering-visualrepresentation-hunter" value="image" <?php if($eptfg_settings_steering['visualrepresentation-hunter'] == 'image') echo 'checked'; ?>/> <label for="input-visualrepresentation-image-hunter">image</label>
             </span>
             <span class="right">
-                <input type="file" accept="image/*" id="input-image-hunter" name="eptfg-steering-image-hunter"/><!--TODO value-->
+                <input type="file" accept="image/*" id="input-image-hunter"/>
+                <input type="hidden" id="image-src-hunter" name="eptfg-steering-image-hunter" value="<?php echo $eptfg_settings_steering['image-hunter']; ?>"/>
+                <img id="image-preview-hunter" src="<?php echo $eptfg_settings_steering['image-hunter']; ?>" width="50" height="50"/>
             </span>
         </div>
     </div>
     <div class="userinput-block">
-        <!--TODO this might cause problem-->
         <p>EDIT THE GATHERER'S AESTHETICS</p>
         <div class="userinput-item">
             <span class="left"><label for="input-oriented-gatherer">oriented towards movement</label></span>
@@ -189,21 +189,22 @@ $eptfg_settings_steering = array(
                 <input type="radio" id="input-shape-circle-gatherer" name="eptfg-steering-shape-gatherer" value="circle" <?php if($eptfg_settings_steering['shape-gatherer'] == 'circle') echo 'checked'; ?>/> <label for="input-shape-circle-gatherer">circle</label><br/>
                 <input type="radio" id="input-shape-triangle-gatherer" name="eptfg-steering-shape-gatherer" value="triangle" <?php if($eptfg_settings_steering['shape-gatherer'] == 'triangle') echo 'checked'; ?>/> <label for="input-shape-triangle-gatherer">triangle</label><br/>
                 <input type="radio" id="input-shape-square-gatherer" name="eptfg-steering-shape-gatherer" value="square" <?php if($eptfg_settings_steering['shape-gatherer'] == 'square') echo 'checked'; ?>/> <label for="input-shape-square-gatherer">square</label><br/>
-                <input type="color" value="#000000" id="input-color-gatherer" name="eptfg-steering-color-gatherer"/>
+                <input type="color" value="<?php echo $eptfg_settings_steering['color-gatherer']; ?>" id="input-color-gatherer" name="eptfg-steering-color-gatherer"/>
             </span>
         </div>
         <div class="userinput-item">
             <span class="left">
                 visual representation:<br/>
-                <input type="radio" id="input-visualrepresentation-image-gatherer" name="eptfg-steering-visualrepresentation-gatherer" value"image" <?php if($eptfg_settings_steering['visualrepresentation-gatherer'] == 'image') echo 'checked'; ?>/> <label for="input-visualrepresentation-image-gatherer">image</label>
+                <input type="radio" id="input-visualrepresentation-image-gatherer" name="eptfg-steering-visualrepresentation-gatherer" value="image" <?php if($eptfg_settings_steering['visualrepresentation-gatherer'] == 'image') echo 'checked'; ?>/> <label for="input-visualrepresentation-image-gatherer">image</label>
             </span>
             <span class="right">
-                <input type="file" accept="image/*" id="input-image-gatherer" name="eptfg-steering-image-gatherer"/><!--TODO value-->
+                <input type="file" accept="image/*" id="input-image-gatherer"/>
+                <input type="hidden" id="image-src-gatherer" name="eptfg-steering-image-gatherer" value="<?php echo $eptfg_settings_steering['image-gatherer']; ?>"/>
+                <img id="image-preview-gatherer" src="<?php echo $eptfg_settings_steering['image-gatherer']; ?>" width="50" height="50"/>
             </span>
         </div>
     </div>
     <div class="userinput-block">
-        <!--TODO this might cause problem-->
         <p>EDIT THE TARGET'S AESTHETICS</p>
         <div class="userinput-item">
             <span class="left"><label for="input-oriented-target">oriented towards movement</label></span>
@@ -218,16 +219,18 @@ $eptfg_settings_steering = array(
                 <input type="radio" id="input-shape-circle-target" name="eptfg-steering-shape-target" value="circle" <?php if($eptfg_settings_steering['shape-target'] == 'circle') echo 'checked'; ?>/> <label for="input-shape-circle-target">circle</label><br/>
                 <input type="radio" id="input-shape-triangle-target" name="eptfg-steering-shape-target" value="triangle" <?php if($eptfg_settings_steering['shape-target'] == 'triangle') echo 'checked'; ?>/> <label for="input-shape-triangle-target">triangle</label><br/>
                 <input type="radio" id="input-shape-square-target" name="eptfg-steering-shape-target" value="square" <?php if($eptfg_settings_steering['shape-target'] == 'square') echo 'checked'; ?>/> <label for="input-shape-square-target">square</label><br/>
-                <input type="color" value="#000000" id="input-color-target" name="eptfg-steering-color-target"/>
+                <input type="color" value="<?php echo $eptfg_settings_steering['color-target']; ?>" id="input-color-target" name="eptfg-steering-color-target"/>
             </span>
         </div>
         <div class="userinput-item">
             <span class="left">
                 visual representation:<br/>
-                <input type="radio" id="input-visualrepresentation-image-target" name="eptfg-steering-visualrepresentation-target" value"image" <?php if($eptfg_settings_steering['visualrepresentation-target'] == 'image') echo 'checked'; ?>/> <label for="input-visualrepresentation-image-target">image</label>
+                <input type="radio" id="input-visualrepresentation-image-target" name="eptfg-steering-visualrepresentation-target" value="image" <?php if($eptfg_settings_steering['visualrepresentation-target'] == 'image') echo 'checked'; ?>/> <label for="input-visualrepresentation-image-target">image</label>
             </span>
             <span class="right">
-                <input type="file" accept="image/*" id="input-image-target" name="eptfg-steering-image-target"/><!--TODO value-->
+                <input type="file" accept="image/*" id="input-image-target"/>
+                <input type="hidden" id="image-src-target" name="eptfg-steering-image-target" value="<?php echo $eptfg_settings_steering['image-target']; ?>"/>
+                <img id="image-preview-target" src="<?php echo $eptfg_settings_steering['image-target']; ?>" width="50" height="50"/>
             </span>
         </div>
     </div>

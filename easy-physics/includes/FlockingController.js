@@ -59,7 +59,14 @@ function FlockingController()
     
     this.visualrepresentation_image = document.getElementById("input-visualrepresentation-image");
     this.image = document.getElementById("input-image");
+    this.imagesrc = document.getElementById("image-src");
+    this.imagepreview = document.getElementById("image-preview");
     this.imageObject;
+    if (typeof this.imagesrc.value !== "undefined" && this.imagesrc.value != "" && this.imagesrc.value != null)
+    {
+        this.imageObject = new Image();
+        this.imageObject.src = this.imagesrc.value;
+    }
     
     this.oriented = document.getElementById("input-oriented");
     this.color = document.getElementById("input-color");
@@ -410,6 +417,8 @@ function imageChange (event)
         {
             flockingController.animation.flock.boids[i].visualrepresentation = flockingController.animation.visualrepresentation;
         }
+        flockingController.imagepreview.src = reader.result;
+        flockingController.imagesrc.value = reader.result;
     }
     if (file)
     {
