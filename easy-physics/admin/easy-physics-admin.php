@@ -49,7 +49,7 @@ function ep_tfg_render_springs_menu()
     include_once( 'partials/easy-physics-admin-display-springs.php' );
     wp_enqueue_style( 'eptfg_adminstyle', EPTFG_PLUGINS_URL . '/admin/css/styles-admin.css', array(), rand(1111,9999), 'all' );
     wp_enqueue_script( 'eptfg_library_script', EPTFG_PLUGINS_URL . '/includes/EasyPhysics.js', array(), rand(1111,9999), 'all' );
-    wp_enqueue_script( 'eptfg_springs_controller_script', EPTFG_PLUGINS_URL . '/includes/SpringsController.js', array('eptfg_library_script'), rand(1111,9999), 'all' );
+    wp_enqueue_script( 'eptfg_springs_controller_script', EPTFG_PLUGINS_URL . '/admin/js/SpringsController.js', array('eptfg_library_script'), rand(1111,9999), 'all' );
     
     //Passing options from the settings menu to the JS file.
     $text = get_option( 'eptfg-springs-text', 'TFG' );
@@ -85,7 +85,7 @@ function ep_tfg_render_floating_menu()
     include_once( 'partials/easy-physics-admin-display-floating.php' );
     wp_enqueue_style( 'eptfg_adminstyle', EPTFG_PLUGINS_URL . '/admin/css/styles-admin.css', array(), rand(1111,9999), 'all' );
     wp_enqueue_script( 'eptfg_library_script', EPTFG_PLUGINS_URL . '/includes/EasyPhysics.js', array(), rand(1111,9999), 'all' );
-    wp_enqueue_script( 'eptfg_floating_controller_script', EPTFG_PLUGINS_URL . '/includes/FloatingController.js', array('eptfg_library_script'), rand(1111,9999), 'all' );
+    wp_enqueue_script( 'eptfg_floating_controller_script', EPTFG_PLUGINS_URL . '/admin/js/FloatingController.js', array('eptfg_library_script'), rand(1111,9999), 'all' );
     
     //Passing options from the settings menu to the JS file.
     $font = (get_option( 'eptfg-floating-font' ) != null) ? get_option( 'eptfg-floating-font' ) : get_option( 'eptfg-floating-fonts', 'Arial' );
@@ -114,7 +114,7 @@ function ep_tfg_render_flocking_menu()
     include_once( 'partials/easy-physics-admin-display-flocking.php' );
     wp_enqueue_style( 'eptfg_adminstyle', EPTFG_PLUGINS_URL . '/admin/css/styles-admin.css', array(), rand(1111,9999), 'all' );
     wp_enqueue_script( 'eptfg_library_script', EPTFG_PLUGINS_URL . '/includes/EasyPhysics.js', array(), rand(1111,9999), 'all' );
-    wp_enqueue_script( 'eptfg_flocking_controller_script', EPTFG_PLUGINS_URL . '/includes/FlockingController.js', array('eptfg_library_script'), rand(1111,9999), 'all' );
+    wp_enqueue_script( 'eptfg_flocking_controller_script', EPTFG_PLUGINS_URL . '/admin/js/FlockingController.js', array('eptfg_library_script'), rand(1111,9999), 'all' );
     
     //Passing options from the settings menu to the JS file.
     $eptfgData = array('EDITMODE' => 'true',
@@ -142,7 +142,7 @@ function ep_tfg_render_steering_menu()
     include_once( 'partials/easy-physics-admin-display-steering.php' );
     wp_enqueue_style( 'eptfg_adminstyle', EPTFG_PLUGINS_URL . '/admin/css/styles-admin.css', array(), rand(1111,9999), 'all' );
     wp_enqueue_script( 'eptfg_library_script', EPTFG_PLUGINS_URL . '/includes/EasyPhysics.js', array(), rand(1111,9999), 'all' );
-    wp_enqueue_script( 'eptfg_steering_controller_script', EPTFG_PLUGINS_URL . '/includes/SteeringController.js', array('eptfg_library_script'), rand(1111,9999), 'all' );
+    wp_enqueue_script( 'eptfg_steering_controller_script', EPTFG_PLUGINS_URL . '/admin/js/SteeringController.js', array('eptfg_library_script'), rand(1111,9999), 'all' );
     
     //Passing options from the settings menu to the JS file.
     $eptfgData = array('EDITMODE' => 'true',
