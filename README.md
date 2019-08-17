@@ -1,8 +1,8 @@
 # Easy Physics Plugin
-WordPress plugin for the Easy Physics library!
+WordPress plugin for the [Easy Physics library](https://github.com/Onpu93/Easy-Physics)!
 This plugin allows you to create physics-based animations and add them to your WordPress site without coding.
 
-If you want to use the library without the editor, you can find it ![here](...link to repository...).
+If you want to use the library without the plugin, you can find it [here](https://github.com/Onpu93/Easy-Physics).
 
 ### Springs
 
