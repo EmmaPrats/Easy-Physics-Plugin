@@ -90,6 +90,7 @@ function ep_tfg_add_canvas_flocking( $atts )
                        'cohesionweight' => get_option( 'eptfg-flocking-cohesion', 1.0 ),
                        'visualrepresentation' => get_option( 'eptfg-flocking-visualrepresentation', 'shape' ),
                        'shape' => get_option( 'eptfg-flocking-shape', 'triangle' ),
+                       'image' => get_option( 'eptfg-flocking-image' ),
                        'ORIENTED' => (get_option( 'eptfg-flocking-oriented' ) != '') ? 'true' : 'false',
                        'color' => get_option( 'eptfg-flocking-color', '#000000' )
                        );
@@ -135,6 +136,10 @@ function ep_tfg_add_canvas_steering( $atts )
                        'shape_hunter' => get_option( 'eptfg-steering-shape-hunter', 'triangle' ),
                        'shape_gatherer' => get_option( 'eptfg-steering-shape-gatherer', 'circle' ),
                        'shape_target' => get_option( 'eptfg-steering-shape-target', 'square' ),
+                       
+                       'image_hunter' => get_option( 'eptfg-steering-image-hunter' ),
+                       'image_gatherer' => get_option( 'eptfg-steering-image-gatherer' ),
+                       'image_target' => get_option( 'eptfg-steering-image-target' ),
                        
                        'ORIENTED_hunter' => (get_option( 'eptfg-steering-oriented-hunter' ) != '') ? 'true' : 'false',
                        'ORIENTED_gatherer' => (get_option( 'eptfg-steering-oriented-gatherer' ) != '') ? 'true' : 'false',

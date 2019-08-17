@@ -28,15 +28,10 @@ $eptfg_settings_floating = array(
     'mass' => get_option( 'eptfg-floating-mass', 500),
     'liquiddensity' => get_option( 'eptfg-floating-liquiddensity', 1000),
     
-    'visualrepresentation' => get_option( 'eptfg-floating-visualrepresentation', 'text'),
-    
     'text' => get_option( 'eptfg-floating-text', 'TFG'),
     'fonts' => get_option( 'eptfg-floating-fonts', 'Arial'),
     'font' => get_option( 'eptfg-floating-font', ''),
     'letterscolor' => get_option( 'eptfg-floating-letterscolor', '#000000' ),
-    
-    'image' => get_option ( 'eptfg-floating-image', null ), //TODO
-    'quantity' => get_option( 'eptfg-floating-quantity', 1),
     
     'size' => get_option( 'eptfg-floating-size', 1),
     'liquidcolor' => get_option( 'eptfg-floating-liquidcolor', '#0000FF' ),
@@ -91,20 +86,10 @@ $eptfg_settings_floating = array(
     <div class="userinput-block">
         <p>EDIT THE AESTHETICS</p>
         <div class="userinput-item">
-            <span class="left">
-                <input type="radio" id="input-visualrepresentation-text" name="eptfg-floating-visualrepresentation" value="text" <?php if ($eptfg_settings_floating['visualrepresentation'] == 'text') echo 'checked'; ?> onchange="form_visualrepresentationChange()"/>
-                <label for="input-visualrepresentation-text">Text</label>
-            </span>
-            <span class="right">
-                <input type="radio" id="input-visualrepresentation-image" name="eptfg-floating-visualrepresentation" value"image" <?php if ($eptfg_settings_floating['visualrepresentation'] == 'image') echo 'checked'; ?> onchange="form_visualrepresentationChange()"/>
-                <label for="input-visualrepresentation-image">Image</label>
-            </span>
-        </div>
-        <div class="userinput-item" <?php if ($eptfg_settings_floating['visualrepresentation'] == 'image') echo 'style="display:none;'; ?>>
             <span class="left">text</span>
             <span class="right"><input type="text" id="input-text" name="eptfg-floating-text" value="<?php echo $eptfg_settings_floating['text']; ?>"/></span>
         </div>
-        <div class="userinput-item" <?php if ($eptfg_settings_floating['visualrepresentation'] == 'image') echo 'style="display:none;'; ?>>
+        <div class="userinput-item">
             <span class="left">select font:</span>
             <span class="right"><select id="input-fonts" name="eptfg-floating-fonts">
                 <option value="Arial" <?php if ($eptfg_settings_floating['fonts'] == 'Arial') echo 'selected'; ?> style="font-family: 'Arial';">Arial</option>
@@ -121,23 +106,15 @@ $eptfg_settings_floating = array(
                 <option value="Verdana" <?php if ($eptfg_settings_floating['fonts'] == 'Verdana') echo 'selected'; ?> style="font-family: 'Verdana';">Verdana</option>
             </select></span>
         </div>
-        <div class="userinput-item" <?php if ($eptfg_settings_floating['visualrepresentation'] == 'image') echo 'style="display:none;'; ?>>
+        <div class="userinput-item">
             <span class="left">or enter your own:</span>
             <span class="right"><input type="text" id="input-font" name="eptfg-floating-font" value="<?php echo $eptfg_settings_floating['font']; ?>" placeholder="Arial"/></span>
-        </div>
-        <div class="userinput-item" <?php if ($eptfg_settings_floating['visualrepresentation'] == 'text') echo 'style="display:none;'; ?>>
-            <span class="left">upload</span>
-            <span class="right"><input type="file" accept="image/*" id="input-image" name="eptfg-floating-image"/></span>
-        </div>
-        <div class="userinput-item" <?php if ($eptfg_settings_floating['visualrepresentation'] == 'text') echo 'style="display:none;'; ?>>
-            <span class="left">quantity</span>
-            <span class="right"><input type="number" min="1" max="10" value="<?php echo $eptfg_settings_floating['quantity']; ?>" step="1" id="input-quantity" name="eptfg-floating-quantity"></input></span>
         </div>
         <div class="userinput-item">
             <span class="left">size</span>
             <span class="right"><input type="range" min="1" max="20" step="1" value="<?php echo $eptfg_settings_floating['size']; ?>" id="input-size" name="eptfg-floating-size"/></span>
         </div>
-        <div class="userinput-item" <?php if ($eptfg_settings_floating['visualrepresentation'] == 'image') echo 'style="display:none;'; ?>>
+        <div class="userinput-item">
             <span class="left">letters color</span>
             <span class="right"><input type="color" value="<?php echo $eptfg_settings_floating['letterscolor']; ?>" id="input-color" name="eptfg-floating-letterscolor"/></span>
         </div>
@@ -150,39 +127,6 @@ $eptfg_settings_floating = array(
             <span class="right"><input type="range" min="0" max="1" step="0.1" value="<?php echo $eptfg_settings_floating['liquidopacity']; ?>" id="input-opacity" name="eptfg-floating-liquidopacity"/></span>
         </div>
     </div>
-<script>
-function form_visualrepresentationChange()
-{
-    if (document.getElementById("input-visualrepresentation-text").checked)
-    {
-        document.getElementById("input-text").parentElement.parentElement.style.display = "flex";
-        document.getElementById("input-font").parentElement.parentElement.style.display = "flex";
-        document.getElementById("input-fonts").parentElement.parentElement.style.display = "flex";
-        document.getElementById("input-image").parentElement.parentElement.style.display = "none";
-        document.getElementById("input-quantity").parentElement.parentElement.style.display = "none";
-        document.getElementById("input-color").parentElement.parentElement.style.display = "flex";
-    }
-    else if (document.getElementById("input-visualrepresentation-image").checked)
-    {
-        document.getElementById("input-text").parentElement.parentElement.style.display = "none";
-        document.getElementById("input-font").parentElement.parentElement.style.display = "none";
-        document.getElementById("input-fonts").parentElement.parentElement.style.display = "none";
-        document.getElementById("input-image").parentElement.parentElement.style.display = "flex";
-        document.getElementById("input-quantity").parentElement.parentElement.style.display = "flex";
-        document.getElementById("input-color").parentElement.parentElement.style.display = "none";
-    }
-    else
-    {
-        document.getElementById("input-visualrepresentation-text").checked = true;
-        document.getElementById("input-text").parentElement.parentElement.style.display = "flex";
-        document.getElementById("input-font").parentElement.parentElement.style.display = "flex";
-        document.getElementById("input-fonts").parentElement.parentElement.style.display = "flex";
-        document.getElementById("input-image").parentElement.parentElement.style.display = "none";
-        document.getElementById("input-quantity").parentElement.parentElement.style.display = "none";
-        document.getElementById("input-color").parentElement.parentElement.style.display = "flex";
-    }
-}
-</script>
 
 <?php submit_button(); ?>
 
